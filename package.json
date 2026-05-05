@@ -1,0 +1,20 @@
+{
+  "name": "marcela-martin-psicologa",
+  "version": "1.0.0",
+  "description": "Sitio web profesional - Lic. Marcela Martin, Psicóloga",
+  "scripts": {
+    "dev": "gulp",
+    "build": "gulp build"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.77.0",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-concat": "^2.6.0",
+    "gulp-htmlmin": "^5.0.1",
+    "browser-sync": "^2.29.3"
+  }
+}

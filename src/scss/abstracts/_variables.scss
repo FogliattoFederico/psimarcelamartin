@@ -1,0 +1,52 @@
+// ── Paleta ───────────────────────────────────────────────
+// Profesional, minimalista, sofisticada con calidez sutil
+$color-bg:          #FAFAF8;       // blanco roto cálido
+$color-bg-alt:      #F2F0EC;       // sección alternada
+$color-text:        #1C1C1A;       // casi negro
+$color-text-soft:   #5C5B58;       // párrafos secundarios
+$color-accent:      #7A6652;       // tierra tostado medio
+$color-accent-light:#B8A99A;       // tierra claro
+$color-line:        #E0DDD8;       // separadores
+$color-white:       #FFFFFF;
+
+// ── Tipografía ───────────────────────────────────────────
+$font-display: 'Cormorant Garamond', Georgia, serif;  // títulos elegantes
+$font-body:    'DM Sans', system-ui, sans-serif;      // legible y moderno
+
+$fs-xs:   0.75rem;    // 12px
+$fs-sm:   0.875rem;   // 14px
+$fs-base: 1rem;       // 16px
+$fs-md:   1.125rem;   // 18px
+$fs-lg:   1.375rem;   // 22px
+$fs-xl:   1.75rem;    // 28px
+$fs-2xl:  2.5rem;     // 40px
+$fs-3xl:  3.5rem;     // 56px
+$fs-4xl:  4.5rem;     // 72px
+
+$fw-light:   300;
+$fw-regular: 400;
+$fw-medium:  500;
+$fw-semibold:600;
+
+// ── Espaciado ────────────────────────────────────────────
+$space-xs:  0.5rem;
+$space-sm:  1rem;
+$space-md:  1.5rem;
+$space-lg:  2.5rem;
+$space-xl:  4rem;
+$space-2xl: 6rem;
+$space-3xl: 9rem;
+
+// ── Layout ───────────────────────────────────────────────
+$container-max: 1140px;
+$nav-height: 72px;
+
+// ── Transiciones ─────────────────────────────────────────
+$transition-base: 0.3s ease;
+$transition-slow: 0.5s ease;
+
+// ── Breakpoints ──────────────────────────────────────────
+$bp-sm:  576px;
+$bp-md:  768px;
+$bp-lg:  1024px;
+$bp-xl:  1280px;

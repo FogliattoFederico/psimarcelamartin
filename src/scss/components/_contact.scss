@@ -1,0 +1,167 @@
+@use 'sass:color';
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+.contact {
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: v.$space-2xl;
+
+    @include m.respond-to(lg) {
+      grid-template-columns: 1fr 1.4fr;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: v.$space-lg;
+  }
+
+  &__info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: v.$space-md;
+    padding-bottom: v.$space-md;
+    border-bottom: 1px solid v.$color-line;
+
+    &:last-child { border-bottom: none; }
+  }
+
+  &__info-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    flex-shrink: 0;
+    border: 1px solid v.$color-line;
+    @include m.flex-center;
+    color: v.$color-accent;
+    font-size: v.$fs-md;
+  }
+
+  &__info-label {
+    font-size: v.$fs-xs;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: v.$color-accent;
+    font-weight: v.$fw-medium;
+    margin-bottom: 0.25rem;
+  }
+
+  &__info-value {
+    font-size: v.$fs-base;
+    color: v.$color-text;
+
+    a {
+      transition: color v.$transition-base;
+      &:hover { color: v.$color-accent; }
+    }
+  }
+
+  // Formulario
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: v.$space-md;
+  }
+
+  &__form-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: v.$space-md;
+
+    @include m.respond-to(sm) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+
+    label {
+      font-size: v.$fs-xs;
+      font-weight: v.$fw-medium;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: v.$color-text-soft;
+    }
+
+    input,
+    select,
+    textarea {
+      padding: 0.875rem 1rem;
+      background: v.$color-bg;
+      border: 1px solid v.$color-line;
+      color: v.$color-text;
+      font-family: v.$font-body;
+      font-size: v.$fs-base;
+      transition: border-color v.$transition-base;
+      outline: none;
+      width: 100%;
+      appearance: none;
+
+      &::placeholder { color: v.$color-accent-light; }
+
+      &:focus {
+        border-color: v.$color-accent;
+      }
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 130px;
+    }
+  }
+
+  &__submit {
+    align-self: flex-start;
+    padding: 0.9rem 2.5rem;
+    background: v.$color-accent;
+    color: v.$color-white;
+    border: none;
+    font-family: v.$font-body;
+    font-size: v.$fs-sm;
+    font-weight: v.$fw-medium;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background v.$transition-base, transform v.$transition-base;
+
+    &:hover {
+      background: color.adjust(v.$color-accent, $lightness: -8%);
+      transform: translateY(-1px);
+    }
+  }
+}
+
+// Footer
+.footer {
+  padding-block: v.$space-lg;
+  border-top: 1px solid v.$color-line;
+
+  &__inner {
+    @include m.container;
+    @include m.flex-between;
+    flex-wrap: wrap;
+    gap: v.$space-sm;
+  }
+
+  &__copy {
+    font-size: v.$fs-xs;
+    color: v.$color-text-soft;
+  }
+
+  &__links {
+    display: flex;
+    gap: v.$space-md;
+
+    a {
+      font-size: v.$fs-xs;
+      color: v.$color-text-soft;
+      transition: color v.$transition-base;
+      &:hover { color: v.$color-accent; }
+    }
+  }
+}
