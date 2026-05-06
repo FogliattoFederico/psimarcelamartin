@@ -3,10 +3,10 @@
 @use '../abstracts/mixins' as m;
 
 .hero {
-  min-height: 100svh;
+   min-height: 100svh;
   display: grid;
-  place-items: center;
-  padding-top: v.$nav-height;
+  place-items: start center;
+  padding-top: calc(v.$nav-height + v.$space-lg);
   position: relative;
   overflow: hidden;
 
@@ -24,21 +24,24 @@
     @include m.container;
     display: grid;
     grid-template-columns: 1fr;
-    gap: v.$space-2xl;
+    gap: v.$space-sm;
     align-items: center;
+    padding-top: v.$space-lg;
 
     @include m.respond-to(lg) {
       grid-template-columns: 1fr 1fr;
+      gap: v.$space-2xl;
+      padding-top: 0;
     }
   }
-
   &__content {
     z-index: 1;
     text-align: center;
 
-    @include m.respond-to(lg) {
-      text-align: left;
-    }
+   @include m.respond-to(lg) {
+    place-items: center;
+    padding-top: v.$nav-height;
+  }
   }
 
   &__eyebrow {
@@ -53,7 +56,7 @@
     text-transform: uppercase;
     color: v.$color-accent;
     margin-bottom: v.$space-md;
-
+    
     @include m.respond-to(lg) {
       justify-content: flex-start;
     }
@@ -87,6 +90,7 @@
     color: v.$color-text-soft;
     max-width: 46ch;
     line-height: 1.8;
+    text-align: start;
   }
 
   &__actions {
