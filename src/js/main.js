@@ -84,7 +84,7 @@
 
   // ── Animaciones on-scroll (IntersectionObserver) ───────
   const animTargets = document.querySelectorAll(
-    '.services__card, .modality__card, .about__grid, .contact__grid, .hero__content'
+    '.services__card, .modality__card, .about__grid, .contact__grid, .hero__content, .opiniones__card'
   );
 
   const observerOptions = {

@@ -1,0 +1,80 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+// ══ OPINIONES ═══════════════════════════════════════════
+
+.opiniones {
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: v.$space-xl;
+    margin-top: v.$space-2xl;
+
+    @include m.respond-to(md) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: v.$space-xl v.$space-lg;
+    }
+  }
+
+  &__card {
+    margin: 0;
+    padding: v.$space-xl v.$space-lg;
+    background: v.$color-white;
+    border: 1px solid v.$color-line;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: v.$space-md;
+    transition: border-color v.$transition-base, transform v.$transition-base;
+
+    &:hover {
+      border-color: v.$color-accent-light;
+      transform: translateY(-2px);
+    }
+  }
+
+  &__stars {
+    color: v.$color-accent;
+    font-size: v.$fs-sm;
+    letter-spacing: 0.15em;
+    line-height: 1;
+  }
+
+  &__text {
+    font-family: v.$font-display;
+    font-style: italic;
+    font-weight: v.$fw-regular;
+    font-size: v.$fs-md;
+    line-height: 1.6;
+    color: v.$color-text;
+    margin: 0;
+    flex-grow: 1;
+  }
+
+  &__author {
+    font-family: v.$font-body;
+    font-size: v.$fs-xs;
+    font-weight: v.$fw-medium;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: v.$color-text-soft;
+  }
+
+  &__source {
+    margin-top: v.$space-lg;
+    text-align: center;
+    font-family: v.$font-body;
+    font-size: v.$fs-xs;
+    color: v.$color-text-soft;
+
+    a {
+      color: v.$color-accent;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+
+      &:hover {
+        color: v.$color-text;
+      }
+    }
+  }
+}
