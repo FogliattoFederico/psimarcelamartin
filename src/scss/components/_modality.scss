@@ -2,51 +2,46 @@
 @use '../abstracts/mixins' as m;
 
 .modality {
-  &__grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: v.$space-md;
-    margin-top: v.$space-2xl;
+  &__panel {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: v.$space-lg;
+    max-width: 640px;
+    margin: v.$space-2xl auto 0;
+    padding: v.$space-xl v.$space-lg;
+    background: v.$color-accent;
+    border: 1px solid v.$color-accent;
+    color: v.$color-white;
+
+    .modality__card-label,
+    .modality__card-title,
+    .modality__card-body,
+    .modality__location {
+      color: v.$color-white;
+      opacity: 1;
+    }
+
+    .modality__location {
+      border-top-color: rgba(v.$color-white, 0.3);
+    }
 
     @include m.respond-to(md) {
-      grid-template-columns: repeat(2, 1fr);
+      flex-direction: row;
+      align-items: flex-start;
     }
   }
 
-  &__card {
-    padding: v.$space-xl v.$space-lg;
-    border: 1px solid v.$color-line;
+  &__panel-icon {
+    font-size: v.$fs-2xl;
+    flex-shrink: 0;
+    line-height: 1;
+  }
+
+  &__panel-content {
     display: flex;
     flex-direction: column;
     gap: v.$space-sm;
-    transition: border-color v.$transition-base;
-
-    &:hover {
-      border-color: v.$color-accent-light;
-    }
-
-    &--featured {
-      background: v.$color-accent;
-      border-color: v.$color-accent;
-      color: v.$color-white;
-
-      .modality__card-label,
-      .modality__card-title,
-      .modality__card-body,
-      .modality__location {
-        color: v.$color-white;
-        opacity: 1;
-      }
-
-      .modality__location {
-        border-top-color: rgba(v.$color-white, 0.3);
-      }
-    }
-  }
-
-  &__card-icon {
-    font-size: v.$fs-2xl;
-    margin-bottom: v.$space-xs;
   }
 
   &__card-label {
@@ -84,9 +79,9 @@
       flex-shrink: 0;
     }
   }
-}
-.modality__note {
-      display: flex;
+
+  &__note {
+    display: flex;
     align-items: center;
     gap: v.$space-sm;
     margin-top: v.$space-xl;
@@ -94,7 +89,7 @@
     background: rgba(v.$color-accent, 0.06);
     border-left: 2px solid v.$color-accent;
     font-family: v.$font-body;
-    font-size: v.$fs-sm;
+    font-size: v.$fs-base;
     color: v.$color-text-soft;
     line-height: 1.6;
 
@@ -102,4 +97,5 @@
       flex-shrink: 0;
       color: v.$color-accent;
     }
+  }
 }
